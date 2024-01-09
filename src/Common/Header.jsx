@@ -25,7 +25,7 @@ export class Header extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-             <Nav.Link> <NavLink  exact activeStyle={{color:'blue'}} to="/" className='navItem'>HOME</NavLink></Nav.Link>
+             <Nav.Link> <NavLink  exact activeStyle={{color:'yellow'}} to="/" className='navItem'>HOME</NavLink></Nav.Link>
              <Nav.Link> <NavLink  exact activeStyle={{color:'yellow'}}to="about" className='navItem'>ABOUT</NavLink></Nav.Link>
              <Nav.Link><NavLink exact activeStyle={{color:'yellow'}} to="services" className='navItem'>SERVICES</NavLink></Nav.Link>
              <Nav.Link><NavLink exact activeStyle={{color:'yellow'}} to="courses" className='navItem'>COURSES</NavLink></Nav.Link>

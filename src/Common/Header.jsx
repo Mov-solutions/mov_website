@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Container, Form, Nav, Navbar,NavDropdown } from 'react-bootstrap';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 import Home from '../Component/Home';
 import About from '../Component/About';
@@ -15,67 +18,24 @@ export class Header extends Component {
 
       <div>
         <header>
-            <div className="header-area">
-              <div className="main-header header-sticky" >
-                <div className="container-fluid">
-                  <div className="row align-items-center">
-                    <div className="col-xl-2 col-lg-2 col-md-1">
-                    <Link to="/"><img src="assets/img/logo/logo.png" alt=""/></Link>
-                    </div>
-                    <div className="col-xl-10 col-lg-10 col-md-10">
-                      <div className="menu-main d-flex align-items-center justify-content-end">
-                        <div className="main-menu f-right d-none d-lg-block">
-                          <nav>
-                            <ul id="navigation">
-                              <li>
-                                <Link to="/">Home</Link>
-                              </li>
-                              <li>
-                                <Link to="/about">About</Link>
-                              </li>
-                              <li>
-                                <Link to="/service">Service</Link>
-                              </li>
-                              <li>
-                                <Link to="/portfolio">Portfolio</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Page</Link>
-                                <ul className="submenu">
-                                  <li>
-                                    <Link to="/blog">Blog</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/blogdetails">Blog Details</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/element">Element</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/portfolio_details">Portfolio Details</Link>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <Link to="/contact">Contact</Link>
-                              </li>
-                            </ul>
-                          </nav>
-                        </div>
-                        <div className="header-right-btn f-right d-none d-xl-block ml-20">
-                          <a href="#" className="btn header-btn">
-                            Get Free Consultation
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="mobile_menu d-block d-lg-none"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <Navbar collapseOnSelect fixed="top" expand="lg" className='nav'>
+        <Container fluid>
+          <Navbar.Brand><NavLink to="/"><img src="assets/img/logo/logo.png" alt=""/></NavLink></Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto"></Nav>
+            <Nav>
+             <Nav.Link> <NavLink  exact activeStyle={{color:'yellow'}} to="/" className='navItem'>HOME</NavLink></Nav.Link>
+             <Nav.Link> <NavLink  exact activeStyle={{color:'yellow'}}to="about" className='navItem'>ABOUT</NavLink></Nav.Link>
+             <Nav.Link><NavLink exact activeStyle={{color:'yellow'}} to="services" className='navItem'>SERVICES</NavLink></Nav.Link>
+             <Nav.Link><NavLink exact activeStyle={{color:'yellow'}} to="courses" className='navItem'>COURSES</NavLink></Nav.Link>
+             <Nav.Link><NavLink exact activeStyle={{color:'yellow'}} to="portfolio" className='navItem'>PORTFOLIO</NavLink></Nav.Link>
+             <Nav.Link><NavLink exact activeStyle={{color:'yellow'}} to="contact" className='navItem'>CONTACT</NavLink></Nav.Link>
+             
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
           </header>
           <Routes>
             <Route path="/" element={<Home />} />
